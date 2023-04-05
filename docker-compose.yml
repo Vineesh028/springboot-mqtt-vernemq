@@ -1,0 +1,15 @@
+version: "3"
+services:
+  vernemq:
+    image: erlio/docker-vernemq
+    container_name: vernemq
+    restart: always
+    environment:
+      DOCKER_VERNEMQ_PLUGINS__VMQ_PASSWD: 'off'
+      DOCKER_VERNEMQ_ALLOW_ANONYMOUS: 'on'
+      DOCKER_VERNEMQ_ACCEPT_EULA: 'yes'
+    ports:
+      - 1883:1883
+      - 8888:8888
+    expose:
+      - 1883
